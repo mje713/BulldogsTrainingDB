@@ -1,0 +1,63 @@
+﻿@page "Id:Guid}"
+@model BulldogsTraining.Pages.viewStudent
+@{
+}
+<div class="bg-secondary bg-opacity-10 py-2 mb-5">
+    <div class="container">
+        <h1>Edit Blog Post</h1>
+    </div>
+
+</div>
+
+@if (Model.StudentCreation != null)
+{
+    <div>
+        <div class="container">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="Id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id" asp-for="StudentCreation.Id" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Callsign</label>
+                    <input type="text" class="form-control" id="name" asp-for="StudentCreation.Name" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Airframe" class="form-label">Airframe</label>
+                    <input type="text" class="form-control" id="Airframe" asp-for="StudentCreation.Airframe" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="InstructorName" class="form-label">Instructor Who Made Profile</label>
+                    <input type="text" class="form-control" id="InstructorName" asp-for="StudentCreation.InstructorName" readonly>
+                </div>
+
+                <div class="mb-3">
+                <label for="Scale" class="form-label text-black">Amount of Knowlege(1-10)</label>
+                <input type="text" class="form-control" id="Scale" asp-for="StudentCreation.Scale">
+            </div>
+
+
+                <div class="mb-3 d-flex justify-content-between">
+
+                    <button class="btn btn-primary" type="submit" asp-page-handler="Edit">Submit</button>
+
+             
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="container">
+        <p>Blog Post Not Found</p>
+    </div>
+}

@@ -1,5 +1,6 @@
 using BulldogsTraining.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<TrainingDbContext>(options =>
  options.UseSqlServer(
      builder.Configuration.GetConnectionString("TrainingDbConnectionString")));
+
+
 
 var app = builder.Build();
 
@@ -24,6 +27,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 

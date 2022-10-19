@@ -2,3 +2,58 @@
 @model BulldogsTraining.Pages.StudentRecordsModel
 @{
 }
+
+<style>
+    body {
+        background-color: #1434A4;
+    }
+</style>
+
+<div class="" py-2 mb-5">
+    <div class="container">
+        <h1>Student Records</h1>
+    </div>
+</div>
+
+@if (Model.StudentCreations != null && Model.StudentCreations.Any())
+{
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td class="text-black">Id</td>
+                    <td>Callsign</td>
+                    <td>Airframe</td>
+                    <td>Scale</td>
+                    <td>InstructorName</td>
+                    <td>Conformation</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var student in Model.StudentCreations)
+                {
+                    <tr>
+                        <td>@student.Id</td>
+                        <td>@student.Name</td>
+                        <td>@student.Airframe</td>
+                        <td>@student.Scale</td>
+                        <td>@student.InstructorName</td>
+                        <td>@student.Confirm</td>
+                        <td>
+                            <a href="/viewStudent">  
+                                View
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="container">
+        <p>No blog posts were found!</p>
+    </div>
+}

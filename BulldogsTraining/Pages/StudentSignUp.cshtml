@@ -2,3 +2,52 @@
 @model BulldogsTraining.Pages.StudentSignUpModel
 @{
 }
+
+<style>
+    body {
+        background-color: #1434A4;
+    }
+</style>
+
+<div class="py-2 mb-5">
+    <div class="container">
+        <h1>Register Student</h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="Name" class="form-label text-black">Callsign</label>
+                <input type="text" class="form-control" id="Name" asp-for="AddStudentCreationRequest.Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="Airframe" class="form-label text-black">Airframe</label>
+                <input type="text" class="form-control" id="Airframe" asp-for="AddStudentCreationRequest.Airframe">
+            </div>
+
+            <div class="mb-3">
+                <label for="Scale" class="form-label text-black">Amount of Knowlege(1-10)</label>
+                <input type="text" class="form-control" id="Scale" asp-for="AddStudentCreationRequest.Scale">
+            </div>
+
+            <div class="mb-3">
+                <label for="InstructorName" class="form-label text-black ">Instructor Name</label>
+                <input type="text" class="form-control" id="InstructorName" asp-for="AddStudentCreationRequest.InstructorName">
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="Confirm" asp-for="AddStudentCreationRequest.Confirm">
+                <label class="form-check-label" for="Confirm">
+                    Confirm Information
+                </label>
+
+                <div class="mb-3">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            </form>
+            </div>
+            </div>
